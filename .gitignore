@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules/
+
+# Build directories
+.next/
+dist/
+out/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Databases & local stores
+app/data/saved-leads.json
+.tempmediaStorage/
