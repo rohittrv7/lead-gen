@@ -25,6 +25,10 @@ export class LeadsService {
     return results;
   }
 
+  async updateLead(id: string, updateData: Partial<Lead>): Promise<Lead> {
+    return this.leadModel.findOneAndUpdate({ id }, updateData, { new: true }).exec();
+  }
+
   async findAll(filters: { category?: string; address?: string; city?: string }): Promise<Lead[]> {
     const query: FilterQuery<Lead> = {};
     if (filters.category) {

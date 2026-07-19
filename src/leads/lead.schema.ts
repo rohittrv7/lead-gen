@@ -68,6 +68,24 @@ export class Lead extends Document {
 
   @Prop({ type: MongooseSchema.Types.Mixed })
   outreachDrafts?: any;
+
+  @Prop({ type: String, default: 'Not Contacted' })
+  contactedStatus?: string;
+
+  @Prop({ type: String })
+  followUpNotes?: string;
+
+  @Prop({ type: String })
+  followUpDate?: string;
+
+  @Prop({ type: Number, default: 0 })
+  projectCost?: number;
+
+  @Prop({ type: Number, default: 0 })
+  amountPaid?: number;
+
+  @Prop({ type: Number, default: 0 })
+  amountDue?: number;
 }
 
 export const LeadSchema = SchemaFactory.createForClass(Lead);

@@ -230,4 +230,34 @@ export class CreateLeadDto {
   @Type(() => OutreachDraftsDto)
   @IsOptional()
   outreachDrafts?: OutreachDraftsDto;
+
+  @ApiPropertyOptional()
+  @IsString()
+  @IsOptional()
+  contactedStatus?: string;
+
+  @ApiPropertyOptional()
+  @IsString()
+  @IsOptional()
+  followUpNotes?: string;
+
+  @ApiPropertyOptional()
+  @IsString()
+  @IsOptional()
+  followUpDate?: string;
+
+  @ApiPropertyOptional()
+  @IsNumber()
+  @IsOptional()
+  projectCost?: number;
+
+  @ApiPropertyOptional()
+  @IsNumber()
+  @IsOptional()
+  amountPaid?: number;
+
+  @ApiPropertyOptional()
+  @IsNumber()
+  @IsOptional()
+  amountDue?: number;
 }

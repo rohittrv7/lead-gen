@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Query } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Param, Body, Query } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiBody, ApiResponse, ApiQuery } from '@nestjs/swagger';
 import { LeadsService } from './leads.service';
 import { CreateLeadDto } from './dto/create-lead.dto';
@@ -40,5 +40,13 @@ export class LeadsController {
   ) {
     const leads = await this.leadsService.findAll({ category, address, city });
     return { success: true, leads };
+  }
+
+  @Patch(':id')
+  @ApiOperation({ summary: 'Update a specific lead follow-up or project information' })
+  @ApiResponse({ status: 200, description: 'Lead updated successfully' })
+  async updateLead(@Param('id') id: string, @Body() body: any) {
+    const lead = await this.leadsService.updateLead(id, body);
+    return { success: true, lead };
   }
 }
