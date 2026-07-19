@@ -260,4 +260,18 @@ export class CreateLeadDto {
   @IsNumber()
   @IsOptional()
   amountDue?: number;
+
+  @ApiPropertyOptional()
+  @IsString()
+  @IsOptional()
+  source?: string;
+
+  @ApiPropertyOptional()
+  @IsString()
+  @IsOptional()
+  imageUrl?: string;
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  socialMetrics?: any;
 }

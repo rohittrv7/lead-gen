@@ -86,6 +86,15 @@ export class Lead extends Document {
 
   @Prop({ type: Number, default: 0 })
   amountDue?: number;
+
+  @Prop({ type: String, default: 'google' })
+  source?: string;
+
+  @Prop({ type: String })
+  imageUrl?: string;
+
+  @Prop({ type: MongooseSchema.Types.Mixed })
+  socialMetrics?: any;
 }
 
 export const LeadSchema = SchemaFactory.createForClass(Lead);
