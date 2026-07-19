@@ -196,19 +196,22 @@ export class CreateLeadDto {
   @IsOptional()
   yearsInBusiness?: number;
 
-  @ApiProperty({ type: AuditDto })
+  @ApiPropertyOptional({ type: AuditDto })
   @ValidateNested()
   @Type(() => AuditDto)
-  audit: AuditDto;
+  @IsOptional()
+  audit?: AuditDto;
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsNumber()
-  score: number;
+  @IsOptional()
+  score?: number;
 
-  @ApiProperty({ type: ScoreBreakdownDto })
+  @ApiPropertyOptional({ type: ScoreBreakdownDto })
   @ValidateNested()
   @Type(() => ScoreBreakdownDto)
-  scoreBreakdown: ScoreBreakdownDto;
+  @IsOptional()
+  scoreBreakdown?: ScoreBreakdownDto;
 
   @ApiPropertyOptional()
   @IsString()
