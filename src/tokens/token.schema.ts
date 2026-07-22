@@ -5,6 +5,9 @@ import { Document } from 'mongoose';
 export class ApifyToken extends Document {
   @Prop({ required: true, unique: true })
   token: string;
+
+  @Prop({ default: '' })
+  label?: string;
 }
 
 export const ApifyTokenSchema = SchemaFactory.createForClass(ApifyToken);
