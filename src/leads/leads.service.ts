@@ -29,6 +29,10 @@ export class LeadsService {
     return this.leadModel.findOneAndUpdate({ id }, updateData, { new: true }).exec();
   }
 
+  async deleteLead(id: string): Promise<any> {
+    return this.leadModel.deleteOne({ id }).exec();
+  }
+
   async findAll(filters: { category?: string; address?: string; city?: string }): Promise<Lead[]> {
     const query: FilterQuery<Lead> = {};
     if (filters.category) {
